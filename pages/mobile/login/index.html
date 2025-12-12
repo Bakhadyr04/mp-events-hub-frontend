@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+</head>
+<style>
+    :root{
+        font-family: "Gilroy", sans-serif;
+    }
+    img{
+        max-width: 5rem;
+        max-height: 5rem;
+        object-fit:cover;
+    }
+    section{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 2%;
+        padding-right: 2%;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    a{
+        color:#FF3CA5;
+    }
+    h1{
+        color: black;
+        font-size: 24px;
+    }
+    label{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: #909090;
+        gap: 0.4rem;
+        font-size: 16px;
+    }
+    input{
+        border: 1px solid #D4D4D4;
+        background-color: transparent;
+        color: #D4D4D4;
+        border-radius: 15px;
+        font-size: 13px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+        width: 100%;
+    }
+    .form-buttons{
+        display: flex;
+        justify-content: center;
+    }
+    button{
+        background-color: #FF3CA5;
+        color: white;
+        border-radius: 3rem;
+        width: 100%;
+        border: 0;
+        padding: 0.8rem;
+        font-size: 20px;
+    }
+    span{
+        text-align: center;
+        font-size: 16px;
+    }
+</style>
+<body>
+    <main>
+        <section>
+            <img src="image.png" alt="Логотип">
+            <h1>Вход</h1>
+            <form action="/submit-login" method="POST" novalidate>
+                <label for="login-email">
+                    Электронная почта
+                    <input type="email" id="login-email" name="email" required placeholder="Введите электронную почту">
+                </label>
+                
+                <label for="login-password">
+                    Пароль
+                    <input type="password" id="login-password" name="password" required placeholder="Введите пароль">
+                </label>
+                
+                <div class="form-buttons">
+                    <button type="submit">Войти</button>
+                </div>
+            </form>
+            <span>
+                Нет аккаунта? <a href="/pages/mobile/register/index.html">Зарегистрироваться</a>
+            </span>
+        </section>
+    </main>
+</body>
+</html>
