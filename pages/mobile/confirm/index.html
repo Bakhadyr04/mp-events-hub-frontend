@@ -29,6 +29,7 @@
     h1{
         color: black;
         font-size: 24px;
+        text-align: center;
     }
     label{
         display: flex;
@@ -76,18 +77,21 @@
     <main>
         <section>
             <img src="./image.png" alt="Логотип">
-            <h1>Вход</h1>
+            <h1>На вашу электронную почту отправлен временный пароль</h1>
             <form action="/submit" method="POST" novalidate>
                 <label for="login">
                     Электронная почта
                     <input type="email" id="login" name="email" required placeholder="Введите почту">
                 </label>
+                <label for="password">
+                    Пароль
+                    <input type="password" id="password" name="password" placeholder="Введите пароль">
+                </label>
                 <div class="form-buttons">
-                    <button type="submit">Получить пароль</button>
+                    <button type="submit">Войти</button>
                 </div>
-                <button type="submit">Получить пароль</button>
             </form>
-            <a href="/pages/mobile/register/index.html">назад</a>
+            <a href="../login/index.html">Назад</a>
         </section>
     </main>
 </body>
