@@ -20,145 +20,44 @@
         display: flex;
     }
 
-    .left-panel {
-        background: linear-gradient(to bottom, #ff2fa8 0 50%, #ffffff 50% 100%);
-        color: white;
-        padding: 30px 50px;
-        position: relative;
-        overflow: hidden;
-        height: 100vh;
-    }
-
-    .logo {
-        font-size: 22px;
-        font-weight: 800;
-        margin-bottom: 60px;
-    }
-
-    .title {
-        font-size: 42px;
-        font-weight: 800;
-        margin-left: 40px;
-    }
-
-    .subtitle {
-        display: inline-block;
-        font-size: 28px;
-        font-weight: 300;
-        letter-spacing: 1.5px;
-        margin-top: 10px;
-        margin-left: 40px;
-    }
-
-    .text-start {
-        font-size: 16px;
-        font-weight: 500;
-        color: gray;
-        padding-left: 5px;
-    }
-
-    .text-end {
-        font-size: 16px;
-        font-weight: 500;
-        color: #ff2fa8;
-        padding-top: 65px;
-    }
-
-    .text-end a {
-        color: #ff2fa8;
-        text-decoration: none !important;
-    }
-
-    .desc {
-        font-size: 16px;
-        font-weight: 600;
-        margin-top: 40px;
-        line-height: 1.5;
-        letter-spacing: 0.5px;
-        max-width: 340px;
-        margin-left: 200px;
-    }
-
     .form-panel {
-        background: linear-gradient(to bottom, #ff2fa8 0 50%, #ffffff 50% 100%);
+        background: linear-gradient(to bottom, #ff2fa8 0 100%);
         display: flex;
         align-items: center;
-        justify-content: center;
-        height: 100vh;
-        padding: 40px;
+        justify-content: end;
+        height: 100%;
+        padding: 0px;
     }
 
     .form-wrapper {
         background: white;
-        padding: 50px 50px;
-        border-radius: 35px;
+        padding: 200px 100px;
+        border-radius: 50px 0 0 50px;
         width: 100%;
-        max-width: 500px;
-        box-shadow: 0 0 40px rgba(0,0,0,0.15);
+        max-width: 700px;
+        height: 100%;
     }
-
-        /* ДЛЯ МОБИЛКИ */
-    @media (max-width: 991px) {
-
-        .left-panel {
-            height: auto !important;
-            background: #ff2fa8 !important;
-            padding: 40px 25px !important;
-            text-align: left !important;
-        }
-
-        .title {
-            margin-left: 20px !important;
-        }
-
-        .subtitle {
-            font-size: 16px !important;
-            margin-left: 20px !important;
-        }
-
-        .desc {
-            font-size: 14px !important;
-            color: white !important;
-            margin-left: 20px !important;
-            margin-right: 50px !important;
-        }
-
-        .form-panel {
-            height: auto !important;
-            padding: 60px 40px 40px !important;
-            background: white !important;
-        }
-
-        .form-wrapper {
-            top: 0 !important;
-            margin-top: -20px;
-            padding: 40px 25px !important;
-            border-radius: 25px !important;
-        }
-
-        .form-title {
-            font-size: 36px !important;
-            text-align: left !important;
-        }
-
-        .signin {
-            text-align: left !important;
-        }
-
-    }
-
 
     .form-title {
-        font-size: 48px;
-        font-weight: 800;
-        margin-bottom: 60px;
-        color: #ff2fa8;
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        color: #000000;
+        text-align: center;
+    }
+
+    .form-label {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: gray;
     }
 
     .input-custom {
-        border-radius: 10px;
-        padding: 10px 14px;
-        height: 50px;
+        border-radius: 15px;
+        padding: 15px;
+        height: 60px;
     }
 
     .input-custom:focus {
@@ -171,38 +70,70 @@
         border-color: #ff2fa8 !important;
     }
     
+    .input-custom::placeholder {
+        color: #bbbbbb;
+
+    }
+
     .btn {
-        margin-top: 30px;
-        margin-bottom: 30px;
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
 
     .submit-btn {
         background: #ff2fa8;
         border: none;
-        height: 52px;
-        border-radius: 12px;
+        height: 60px;
+        border-radius: 30px;
         color: white;
-        font-size: 16px;
-        font-weight: 700;
-        box-shadow: 0px 6px 15px rgba(255, 47, 168, 0.4);
+        font-size: 20px;
+        font-weight: 500;
     }
 
     .submit-btn:hover {
         background: #ff3dae !important;
         color: white !important;
     }
+    
+    .signin-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .signin {
+        color: gray;
+    }
 
     .signin a {
-        display: inline-block;
-        margin-bottom: 25px;
         color: #ff2fa8;
+        text-align: center;
         font-weight: 600;
-        border: 2px solid #ff2fa8;
-        padding: 3px 10px;
-        margin-left: 10px;
-        border-radius: 12px;
-        text-decoration: none;
     }
+
+    .logo {
+        max-width: 4rem;
+        max-height: 4rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto; 
+    }
+    
+    /* ДЛЯ МОБИЛКИ */
+    @media (max-width: 768px) {
+
+    .form-wrapper {
+        border-radius: 0;
+        padding: 35px 20px;
+    }
+    
+    .form-panel {
+        justify-content: center;
+        background: linear-gradient(to bottom, #ffffff 0 100%);
+    }
+    
+}
 </style>
 </head>
 
@@ -210,42 +141,32 @@
 
 <div class="container-fluid layout g-0">
     <div class="row g-0 w-100">
+        
+        <div class="form-panel">
+            <form action="#" method="post" class="form-wrapper">
 
-        <!-- ЛЕВАЯ ПОЛОВИНА -->
-        <div class="col-lg-6 left-panel">
-            <div class="logo">АФИША</div>
-
-            <h1 class="title">Твой пропуск</h1>
-            <span class="subtitle">в мир событий Московского Политеха</span>
-
-            <p class="desc">
-                Мы собираем для тебя все самые интересные мероприятия,
-                форумы и возможности. От концертов и выставок до студенческих
-                клубов — найди свой способ реализовать таланты и весело провести время!
-            </p>
-        </div>
-
-        <!-- ПРАВАЯ ПОЛОВИНА -->
-        <div class="col-lg-6 form-panel">
-            <form id="loginForm" method="post" class="form-wrapper">
-
-                <span class="text-start signin mb-2">
-                    Нет аккаунта? <a href="./registration.html">регистрация</a>
-                </span>
-
+                <img class="logo" src="./image.png" alt="Логотип">
                 <h2 class="form-title">Вход</h2>
 
-                <label for="email" class="form-label">Введите почту</label>
-                <input id="email" type="email" class="form-control input-custom mb-3" placeholder="Email address" name="email">
+                <label for="reg-email" class="form-label">Электронная почта</label>
+                <input id="reg-email" type="email" class="form-control input-custom mb-3" required placeholder="Введите электронную почту" name="email">
 
-                <label for="password" class="form-label">Введите пароль</label>
-                <input id="password" type="password" class="form-control input-custom mb-4" placeholder="Password" name="password">
-                
-                <div class="text-end mb-2">
-                    <a href="#">Забыли пароль?</a>
-                </div>
+                <label for="reg-password" class="form-label">Пароль</label>
+                <input id="reg-password" type="password" class="form-control input-custom mb-3" required minlength="8" placeholder="Введите пароль" name="password">
 
                 <button type="submit" class="btn submit-btn w-100">Войти</button>
+
+                <div class="signin-container">
+                    <span class="signin mb-3">
+                        Еще нет аккаунта? <a href="../registration/firstStep/registration.html">Регистрация</a>
+                    </span>
+                </div>
+
+                <div class="signin-container">
+                    <span class="signin mb-2">
+                        <a href="../recovery/passwordRecovery.html">Забыли пароль?</a>
+                    </span>
+                </div>
 
             </form>
         </div>
@@ -255,6 +176,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="./login.js"></script>
-
 </body>
 </html>
