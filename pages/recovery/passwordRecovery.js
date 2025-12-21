@@ -1,12 +1,13 @@
 (function () {
-  const registerForm = document.getElementById('registerForm');
-  const registerSubmitBtn = document.getElementById('registerSubmitBtn');
+  const form = document.querySelector('.form-wrapper');
 
-  if (!registerForm) {
-    console.error('Не найден registerForm (#registerForm)');
+  if (!form) {
+    console.error('Не найдена форма (.form-wrapper)');
     return;
   }
 
+  const submitBtn = form.querySelector('button[type="submit"]');
+  
   const API_ORIGIN = 'http://localhost:8000';
   const API_PREFIX = '/api';
 
@@ -82,38 +83,26 @@
     }
   }
 
-  registerForm.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const email = (registerForm.elements['email']?.value || '').trim();
-    const name = (registerForm.elements['name']?.value || '').trim();
-    const secondName = (registerForm.elements['second_name']?.value || '').trim();
-    const groupNumber = (registerForm.elements['group_number']?.value || '').trim();
-    const password = registerForm.elements['password']?.value || '';
+    const email = (form.elements['email']?.value || '').trim();
+    const password = form.elements['password']?.value || '';
 
-    if (!email || !name || !secondName || !groupNumber || !password) {
-      console.error('Валидация: не заполнены все поля', {
+    if (!email || !password) {
+      console.error('Валидация: email/пароль не заполнены', {
         email: Boolean(email),
-        name: Boolean(name),
-        second_name: Boolean(secondName),
-        group_number: Boolean(groupNumber),
         password: Boolean(password),
       });
       return;
     }
 
-    const payload = {
-      name,
-      second_name: secondName,
-      group_number: groupNumber,
-      email,
-      password,
-    };
+    const payload = { email, password };
 
-    const url = joinUrl(API_BASE, 'v1', 'auth', 'register');
+    const url = joinUrl(API_BASE, 'v1', 'auth', 'login');
 
     try {
-      setButtonLoading(registerSubmitBtn, true, 'Отправляем...');
+      setButtonLoading(submitBtn, true, 'Входим...');
 
       const body = await fetchJson(url, {
         method: 'POST',
@@ -122,27 +111,27 @@
         body: JSON.stringify(payload),
       });
 
-      console.log('Успешная регистрация:', body);
+      console.log('Успешный вход:', body);
 
-      const userUid = body && body.user_uid ? String(body.user_uid) : null;
+      const token = body && body.jwt_auth_token ? String(body.jwt_auth_token) : null;
 
-      if (!userUid) {
-        console.warn('Регистрация успешна, но user_uid не пришёл:', body);
+      if (!token) {
+        console.warn('Логин успешен, но jwt_auth_token не пришёл:', body);
       } else {
-        localStorage.setItem('registeredUserId', userUid);
-        console.log('registeredUserId сохранён в localStorage:', userUid);
+        localStorage.setItem('jwt_auth_token', token);
+        console.log('jwt_auth_token сохранён в localStorage');
       }
 
-      window.location.href = './secondStep/confirmCode.html';
+      window.location.href = '../login/login.html';
     } catch (err) {
-      console.error('Ошибка при /v1/auth/register:', {
+      console.error('Ошибка при /v1/auth/login:', {
         message: err.message,
         status: err.status,
         data: err.data,
         code: err.code,
       });
     } finally {
-      setButtonLoading(registerSubmitBtn, false);
+      setButtonLoading(submitBtn, false);
     }
   });
 })();
