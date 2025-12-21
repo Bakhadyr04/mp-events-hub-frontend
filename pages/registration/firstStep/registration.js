@@ -133,7 +133,7 @@
         console.log('registeredUserId сохранён в localStorage:', userUid);
       }
 
-      window.location.href = './secondStep/confirmCode.html';
+      window.location.href = './secondStep/index.html';
     } catch (err) {
       console.error('Ошибка при /v1/auth/register:', {
         message: err.message,

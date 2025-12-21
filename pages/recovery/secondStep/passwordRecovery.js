@@ -122,7 +122,7 @@
         console.log('jwt_auth_token сохранён в localStorage');
       }
 
-      window.location.href = '../login/login.html';
+      window.location.href = '../login/index.html';
     } catch (err) {
       console.error('Ошибка при /v1/auth/login:', {
         message: err.message,

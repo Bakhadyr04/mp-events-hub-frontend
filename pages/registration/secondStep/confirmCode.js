@@ -143,7 +143,7 @@
 
       localStorage.removeItem('registeredUserId');
 
-      window.location.href = '../login.html';
+      window.location.href = '../index.html';
     } catch (err) {
       console.error('Ошибка при /v1/auth/confirm:', {
         message: err.message,
