@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Вход</title>
+<title>Восстановление пароля</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Gilroy:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../fonts/stylesheet.css">
 
 <style>
     body {
@@ -145,8 +145,8 @@
         <div class="form-panel">
             <form action="#" method="post" class="form-wrapper">
 
-                <img class="logo" src="./image.png" alt="Логотип">
-                <h2 class="form-title">Вход</h2>
+                <img class="logo" src="../image.png" alt="Логотип">
+                <h2 class="form-title">На вашу электронную почту отправлен временный пароль</h2>
 
                 <label for="reg-email" class="form-label">Электронная почта</label>
                 <input id="reg-email" type="email" class="form-control input-custom mb-3" required placeholder="Введите электронную почту" name="email">
@@ -157,14 +157,8 @@
                 <button type="submit" class="btn submit-btn w-100">Войти</button>
 
                 <div class="signin-container">
-                    <span class="signin mb-3">
-                        Еще нет аккаунта? <a href="../registration/firstStep/registration.html">Регистрация</a>
-                    </span>
-                </div>
-
-                <div class="signin-container">
                     <span class="signin mb-2">
-                        <a href="../recovery/passwordRecovery.html">Забыли пароль?</a>
+                        <a href="../../login/index.html">Назад</a>
                     </span>
                 </div>
 
@@ -175,6 +169,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./login.js"></script>
+<script src="./passwordRecovery.js"></script>
 </body>
 </html>

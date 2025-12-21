@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Подтверждение регистрации</title>
+<title>Регистрация</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Gilroy:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../fonts/stylesheet.css">
 
 <style>
     body {
@@ -31,7 +31,7 @@
 
     .form-wrapper {
         background: white;
-        padding: 200px 100px;
+        padding: 35px 100px;
         border-radius: 50px 0 0 50px;
         width: 100%;
         max-width: 700px;
@@ -146,16 +146,28 @@
             <form action="#" method="post" class="form-wrapper">
 
                 <img class="logo" src="./image.png" alt="Логотип">
-                <h2 class="form-title">На вашу электронную почту отправлен код подтверждения</h2>
+                <h2 class="form-title">Регистрация</h2>
 
-                <label for="confirm-code" class="form-label">Код подтверждения</label>
-                <input id="confirm-code" type="password" class="form-control input-custom mb-3" required placeholder="Введите код подтверждения" name="password">
+                <label for="reg-email" class="form-label">Электронная почта</label>
+                <input id="reg-email" type="email" class="form-control input-custom mb-3" required placeholder="Введите электронную почту" name="email">
 
-                <button type="submit" class="btn submit-btn w-100">Подтвердить</button>
+                <label for="surname" class="form-label">Фамилия</label>
+                <input id="surname" type="text" class="form-control input-custom mb-3" required placeholder="Введите фамилию" name="last_name">
+
+                <label for="name" class="form-label">Имя</label>
+                <input id="name" type="text" class="form-control input-custom mb-3" required placeholder="Введите имя" name="first_name">
+
+                <label for="group_number" class="form-label">Номер группы</label>
+                <input id="group_number" type="text" class="form-control input-custom mb-3" required minlength="7" placeholder="Введите номер группы" name="group_number">
+
+                <label for="reg-password" class="form-label">Пароль</label>
+                <input id="reg-password" type="password" class="form-control input-custom mb-3" required minlength="8" placeholder="Введите пароль" name="password">
+
+                <button type="submit" class="btn submit-btn w-100">Зарегистрироваться</button>
 
                 <div class="signin-container">
                     <span class="signin mb-2">
-                        <a href="../firstStep/registration.html">Назад</a>
+                        Уже есть аккаунт? <a href="../../login/index.html">Войти</a>
                     </span>
                 </div>
 
@@ -166,6 +178,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./confirmCode.js"></script>
+<script src="./registration.js"></script>
 </body>
 </html>
